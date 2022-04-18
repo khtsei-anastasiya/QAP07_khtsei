@@ -37,7 +37,7 @@ elif 25 <= int(age) <= 26:
 elif 45 <= int(age) <= 46:
     age = f'Don\'t forget to reissue your id again because you have {age} y.o'
 else:
-    age = f'Your docs are valid!'
+    age = f'You have {age} y.o'
 
 if name == f'You haven\'t provided your name':
     result = f'you cannot use program without name'
