@@ -22,7 +22,7 @@ if not name:
 elif name.__len__() >= 3:
     name = f'Nice to meet you "{name.capitalize()}"'
 else:
-    name = f'Your name is less than 2 letters'
+    name = f'Your name is less than 3 letters'
 
 if not age:
     age = f'You haven\'t provided your age'
@@ -35,12 +35,12 @@ elif 25 <= int(age) <= 26:
 elif 45 <= int(age) <= 46:
     age = f'Don\'t forget to reissue your id again because you have {age} y.o'
 else:
-    age = f'You have {age} y.o'
+    age = f'You are {age} y.o'
 
 if name == f'You haven\'t provided your name':
     result = f'You cannot use program without name'
-elif name == f'Your name is less than 2 letters':
-    result = f'Your name is less than 2 letters, you cannot use program without correct name'
+elif name == f'Your name is less than 3 letters':
+    result = f'Your name is less than 3 letters, you cannot use program without correct name'
 else:
     result = f'{name},\n {age}'
 
