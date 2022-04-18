@@ -16,22 +16,20 @@
 
 name = input('What\'s your name?: ')
 age = input('How old are you?: ')
-
+name = name.strip()
 if not name:
     name = f'You haven\'t provided your name'
 elif name.__len__() >= 3:
     name = f'Nice to meet you "{name.capitalize()}"'
 else:
-    name = f'Your name less than 2 letters'
+    name = f'Your name is less than 2 letters'
 
 if not age:
     age = f'You haven\'t provided your age'
 elif int(age) < 14:
     age = f'Sorry, you cannot use the program. Your age is less than 14'
-elif 14 <= int(age) <= 15:
-    age = f'You don\'t need id because you have only {age} y.o'
 elif 16 <= int(age) <= 17:
-    age = f'Don\'t forget to  release your first id because you have {age} y.o'
+    age = f'Don\'t forget to release your first id because you have {age} y.o'
 elif 25 <= int(age) <= 26:
     age = f'Don\'t forget to reissue your id because you have {age} y.o'
 elif 45 <= int(age) <= 46:
@@ -40,9 +38,9 @@ else:
     age = f'You have {age} y.o'
 
 if name == f'You haven\'t provided your name':
-    result = f'you cannot use program without name'
-elif name == f'Your name less than 2 letters':
-    result = f'Your name less than 2 letters, you cannot use program without correct name'
+    result = f'You cannot use program without name'
+elif name == f'Your name is less than 2 letters':
+    result = f'Your name is less than 2 letters, you cannot use program without correct name'
 else:
     result = f'{name},\n {age}'
 
