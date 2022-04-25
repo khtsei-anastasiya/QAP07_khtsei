@@ -16,6 +16,9 @@ def check_name(name: str) -> str:
     if not name:
         err_message = f'You haven\'t provided your name. '
         return err_message
+    if name.count(' ') > 1:
+        err_message = f'Only one space is allowed. Ex. "Lora Lee" '
+        return err_message
     if len(name) < 3:
         err_message = f'Your name is less than 3 letters. '
         return err_message
@@ -52,7 +55,7 @@ def main_input():
         age = int(input('How old are you?: '))
         err_message = check_name(name) + check_age(age)
         if err_message == '' '':
-            err_message = f'Hey, {name.title()}! You are {age} y.o! {suggestion(age)}'
+            err_message = f'Hey, "{name.title()}"! You are {age} y.o! {suggestion(age)}'
             print(err_message)
             break
         else:
