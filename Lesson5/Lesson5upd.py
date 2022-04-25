@@ -29,20 +29,20 @@ def check_age(age: int) -> str:
     if not age:
         err_message = f'You haven\'t provided your age'
         return err_message
-    if age < 14:
+    if int(age) < 14:
         err_message = f'Sorry, you cannot use the program. Your age is less than 14'
         return err_message
     return ''
 
 
 def suggestion(age: int) -> str:
-    if 16 <= age <= 17:
+    if 16 <= int(age) <= 17:
         message = f'Don\'t forget to release your first id'
         return message
-    if 25 <= age <= 26:
+    if 25 <= int(age) <= 26:
         message = f'Don\'t forget to reissue your id'
         return message
-    if 45 <= age <= 46:
+    if 45 <= int(age) <= 46:
         message = f'Don\'t forget to reissue your id again'
         return message
     return ''
@@ -52,7 +52,7 @@ def main_input():
     err_message = ' '
     while err_message != '' '':
         name = input('What\'s your name?: ').strip()
-        age = int(input('How old are you?: '))
+        age = input('How old are you?: ')
         err_message = check_name(name) + check_age(age)
         if err_message == '' '':
             err_message = f'Hey, "{name.title()}"! You are {age} y.o! {suggestion(age)}'
