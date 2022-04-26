@@ -13,6 +13,8 @@
 
 
 def check_name(name: str) -> str:
+    """This function validates name for nonempty state, min length and spaces and returns error if so. If validation
+    pass, there are no error message. """
     if not name:
         err_message = f'You haven\'t provided your name. '
         return err_message
@@ -26,6 +28,8 @@ def check_name(name: str) -> str:
 
 
 def check_age(age: int) -> str:
+    """This function validates age for nonempty state and min available age and returns error if so. If validation pass,
+    there are no error message."""
     if not age:
         err_message = f'You haven\'t provided your age'
         return err_message
@@ -36,6 +40,8 @@ def check_age(age: int) -> str:
 
 
 def suggestion(age: int) -> str:
+    """This function validates age for certain intervals to release id and returns suggestion message if so.
+     If age is outside the intervals, there are no suggestion message."""
     if 16 <= int(age) <= 17:
         message = f'Don\'t forget to release your first id'
         return message
@@ -49,6 +55,7 @@ def suggestion(age: int) -> str:
 
 
 def main_input():
+    """This is main function which invokes input for name and age till it will be filled correctly"""
     err_message = ' '
     while err_message != '' '':
         name = input('What\'s your name?: ').strip()
