@@ -19,7 +19,7 @@ def check_name(name: str) -> str:
         err_message = f'You haven\'t provided your name. '
         return err_message
     if name.count(' ') > 1:
-        err_message = f'Only one space is allowed. Ex. "Lora Lee" '
+        err_message = f'Only one space is allowed for name field. Ex. "Lora Lee" '
         return err_message
     if len(name) < 3:
         err_message = f'Your name is less than 3 letters. '
