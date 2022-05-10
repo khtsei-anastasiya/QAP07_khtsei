@@ -36,7 +36,9 @@ class Tesla(BasicCar):
     def __init__(self, battery_pover: int = 60, gear_type='1-speed fixed gear ratio'):
         self.battery_pover = battery_pover
         self.gear_type = gear_type
-        super().__init__(model='Tesla S', engine_type='Electric', max_speed=249)
+        self.model = 'Tesla S'
+        self.engine_type = 'Electric'
+        self.max_speed = 249
 
     def autopilot(self):
         if self.battery_pover > 60:
@@ -54,7 +56,9 @@ class Tesla(BasicCar):
 
 class LandRover(BasicCar):
     def __init__(self, engine_pover: int = 400, gear_type='Gear type is Automatic'):
-        super().__init__(model='LandRover Sport', engine_type='Petrol', max_speed=190)
+        self.model = 'LandRover Sport'
+        self.max_speed = '190'
+        self.engine_type = 'Petrol'
         self.gear_type = gear_type
         self.engine_pover = engine_pover
 
@@ -79,7 +83,7 @@ class Plane:
         self.model = model
         self.engine_type = engine_type
         self.max_speed = max_speed
-        self.variant = variant
+        self.variant = variant if not variant else ''
         self.cruising_altitude = cruising_altitude
 
     def info(self):
@@ -97,9 +101,10 @@ class Plane:
 
 class Boeing(Plane):
 
-    def __init__(self, variant='', length=''):
-        super().__init__(model='Boeing 737 ', engine_type='high bypass turbofan engine', max_speed='898',
-                         cruising_altitude='')
+    def __init__(self, variant='', length: int = 94):
+        self.model = 'Boeing 737 '
+        self.engine_type = 'high bypass turbofan engine'
+        self.max_speed = '898'
         self.length = length
         self.variant = variant
         if self.length == 94:
@@ -129,7 +134,6 @@ class Boeing(Plane):
 class Concorde(Plane):
 
     def __init__(self):
-        # self.cruising_altitude = '18,300'
         super().__init__(model='Concorde', engine_type='Mk 610 turbojets with reheat,', max_speed='2,179',
                          cruising_altitude='18,300')
 
